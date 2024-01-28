@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n, i, j;
+    
+    cin >> n;
+    
+    vector<int> vec(n);
+    
+    for(auto& i : vec)
+    {
+        cin >> i;
+    }
+    
+    for(i = 0; i < n; i ++)
+    {
+        if(sqrt(vec[i]) == (int) sqrt(vec[i]))
+        {
+            for(j = i + 1; j < n; j ++)
+            {
+                if(sqrt(vec[j]) == (int) sqrt(vec[j]))
+                {
+                    if(vec[j] < vec[i])
+                    {
+                        swap(vec[i], vec[j]);
+                    }
+                }
+            }
+        }
+    }
+    
+    for(i = 0; i < n; i ++)
+    {
+        cout << vec[i] << ' ';
+    }
+
+    return 0;
+}
